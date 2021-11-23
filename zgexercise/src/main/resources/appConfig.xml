@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDao" class="com.itzg.dao.impl.userDaoImpl"></bean>
+    <!--    工厂静态方法创建对象-->
+    <!--    <bean id="factory" class="com.itzg.factory.factoryCreate" factory-method="getUserDao"></bean>-->
+    <!--    工厂非静态方法创建对象-->
+    <bean id="factory" class="com.itzg.factory.factoryCreate"></bean>
+    <bean id="getinstance" class="com.itzg.factory.factoryCreate" factory-bean="factory"
+          factory-method="getinstance"></bean>
+
+
+    <!--    <bean id="userService" class="com.itzg.service.impl.userServiceImpl"></bean>-->
+    <!--    setter注入-->
+    <!--    <bean id="userService" class="com.itzg.service.impl.userServiceImpl">-->
+    <!--        <property name="userDao" ref="userDao"></property>-->
+    <!--    </bean>-->
+
+    <bean id="userService" class="com.itzg.service.impl.userServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+    </bean>
+</beans>
