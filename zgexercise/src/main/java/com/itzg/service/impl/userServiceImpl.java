@@ -3,8 +3,13 @@ package com.itzg.service.impl;
 import com.itzg.dao.impl.userDaoImpl;
 import com.itzg.service.userService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
+@Service
 public class userServiceImpl implements userService {
+    @Resource(name = "userDao")
     private userDaoImpl userDao;
 
     public userServiceImpl() {
