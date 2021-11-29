@@ -39,7 +39,7 @@ public class Test {
         MealA mealA = new MealA();
 
         KFWWaiter kfwWaiter = new KFWWaiter(mealA);
-        Meal construct = kfwWaiter.construct();
+        Meal construct = kfwWaiter.Builder();
         System.out.println("Food:" + construct.getFood() + " Drink:" + construct.getDrink());
 
     }

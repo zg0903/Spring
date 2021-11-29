@@ -10,7 +10,7 @@ public class KFWWaiter {
         this.mealBuilder = mealBuilder;
     }
 
-    public Meal construct() {
+    public Meal Builder() {
         mealBuilder.buildFood();
         mealBuilder.buildDrink();
         return mealBuilder.getMeal();
